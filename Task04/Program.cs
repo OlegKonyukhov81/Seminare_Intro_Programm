@@ -6,7 +6,7 @@ Console.WriteLine("Введите число 2: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число 3: ");
 int numberC = Convert.ToInt32(Console.ReadLine());
-int MaxNumber = numberA;
+
 if (numberA > numberB) 
 {
     if (numberC > numberA) 
