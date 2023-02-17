@@ -1,7 +1,7 @@
 ﻿// Программа, которая выводит случайное число от10до99 и показывает наибольшую цифру этого числа.
 
 int number = new Random().Next(10, 100);
-// Console.WriteLine(number);
+Console.WriteLine(number);
 // int firstDigit = number / 10;
 // int secondDigit = number % 10;
 // if (firstDigit > secondDigit)
@@ -12,12 +12,25 @@ int number = new Random().Next(10, 100);
 // Console.WriteLine($"Наибольшая цифра числа {secondDigit}");
 
 
-int MaxDigit(int num)
+int SearchMaxDigit(int num)
 {
-    int max = num;
-    int firDig = number / 10;
-    int secDig = number % 10;
-    if ()
+    int digit1 = num / 10;
+    int digit2 = num % 10;
+    // if (digit1 > digit2)
+    // {
+    //     return digit1;
+    // }
+    // return digit2;
+    // вместо выше написанного условия можно использовать тэрнарный оператор см. ниже
+    // int result = digit1 > digit2 ? digit1 : digit2; // 
+    // return result;
+    // или
+    return digit1 > digit2 ? digit1 : digit2;
 }
 
-int maximal = MaxDigit(int num);
+int maxDigit = SearchMaxDigit(number); // Мы можем вызвать результат работы метода в любом месте кода -
+// - можно выше метода
+Console.WriteLine(maxDigit); // Свернуть, чтобы не занимал много места
+
+// int maxDigit = SearchMaxDigit(57); // <- Менять входящие данные
+// Console.WriteLine(maxDigit);
