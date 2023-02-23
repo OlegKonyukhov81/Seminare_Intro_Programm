@@ -12,7 +12,7 @@ int SearchQuarter(int absciss, int ordinate)
         if (absciss > 0 && ordinate < 0) return 4;
         if (absciss < 0 && ordinate > 0) return 2;
         if (absciss < 0 && ordinate < 0) return 3;
-        return 0;
+        else return 0;
 }
 // int quarter = SearchQuarter(coordinateX, coordinateY);
 // if (quarter == 0) Console.WriteLine("Вы ввели ноль!");
