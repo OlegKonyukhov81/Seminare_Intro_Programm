@@ -23,13 +23,3 @@ int SearchQuarter(int absciss, int ordinate)
 int quarter = SearchQuarter(coordinateX, coordinateY);
 string result = quarter > 0 ? $"{quarter}" : "Вы ввели ноль!";
 Console.WriteLine(result);
-
-
-// int Prompt(string message);
-// {
-//     Console.WriteLine(message); 
-//     string value = Console.ReadLine();
-//     int result = Convert.ToInt32(value);
-//     return result;
-// }
-// int number = Prompt("Введите ")
