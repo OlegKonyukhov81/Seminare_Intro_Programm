@@ -12,13 +12,13 @@ bool ValidateZero(int value)
 int CountDigits(int exploreNumber)
 {
     int countDigits = 0;
-    int cutNumber = 10;
+    // int cutNumber = 10;
     int currentNumber = Math.Abs(exploreNumber);
-    while (currentNumber > 0 || currentNumber % 10 > 0)
+    while (currentNumber != 0)
     {
         countDigits += 1;
         currentNumber = currentNumber / 10;
-        cutNumber = cutNumber * 10;
+        // cutNumber = cutNumber * 10;
     }
     return countDigits;
 }
