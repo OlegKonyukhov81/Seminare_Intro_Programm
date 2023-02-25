@@ -13,7 +13,7 @@ int CountDigits(int exploreNumber)
 {
     int countDigits = 0;
     int cutNumber = 10;
-    int currentNumber = exploreNumber;
+    int currentNumber = Math.Abs(exploreNumber);
     while (currentNumber > 0 || currentNumber % 10 > 0)
     {
         countDigits += 1;
