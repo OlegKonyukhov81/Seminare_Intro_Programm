@@ -42,11 +42,34 @@ void FillAndPrintArray(int[] generated)
     }
     int count = generated.Length;
     int position = 0;
-    while (position < count)
+    // Console.Write("["); лучше выводить без скобок, так будет универсальней, 
+    while (position < count)        // а скобки добавить при вызове метода. См. вызов.
     {
-        Console.WriteLine(generated[position]);
+        Console.Write($"{generated[position]}");
+        if (position < count-1) Console.Write(", ");
         position +=1;
     }
+    // Console.Write("]");
 }
 int[] array = new int[8];
+Console.Write("[");
 FillAndPrintArray(array);
+Console.Write("]");
+
+// Массив с задаваемым количеством элементов
+
+// Console.WriteLine("Введите количество элементов в массиве: ");
+// int volume = Convert.ToInt32(Console.ReadLine());
+// int[] array = FillnewArray(volume, 0, 1);
+
+// int FillnewArray(int value, int min, int max) // создаем метод в который будем задавать 3 переменные
+// {
+//     Random rand = new Random(); // создаем объект(экземпляр объекта) для генерации
+//     int[] variableArray = new int[value]; // задаем(создаем) массив(переменную) = выделяем память для него,
+//                                           // количество элементов - value.
+//     for (int i = 0; i < value; i++)
+//     {
+//         variableArray[i] = rand.Next(min, max + 1); //здесь реализуем(вызываем метод генерации) на объекте
+//     }                                             // таким образом код не создает каждый раз новый объект
+//     return variableArray;
+// }
