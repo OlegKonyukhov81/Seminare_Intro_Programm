@@ -15,11 +15,12 @@ bool ValidateNaturalNum(int verifiableNum)
 int ExponentiationCycle(int number, int multiplier)
 {
     int currentMultiplier = Math.Abs(number);
-    int count = 1;
-    while(count < multiplier)
+    // int count = 1;
+    // while(count < multiplier)
+    for (int i = 1; i < multiplier; i++)
     {
         currentMultiplier = currentMultiplier * number;
-        count ++;
+        // count ++;
     }
     return currentMultiplier;
 }
