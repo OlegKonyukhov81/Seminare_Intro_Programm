@@ -9,7 +9,11 @@ int number2 = Convert.ToInt32(Console.ReadLine());
 bool ValidateNaturalNum(int verifiableNum)
 {
     if (verifiableNum > 0) return true;
-    else return false;
+    else
+    {
+        Console.WriteLine("Второе число меньше нуля!");
+        return false;
+    }
 }
 
 int ExponentiationCycle(int number, int multiplier)
@@ -30,4 +34,4 @@ if(ValidateNaturalNum(number2))
     int value = ExponentiationCycle(number1, number2);
     Console.WriteLine($"{number1}, {number2} -> {value}");
 }
-else Console.WriteLine("Второе число не натуральное!");
+// else Console.WriteLine("Второе число меньше нуля");

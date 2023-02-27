@@ -9,7 +9,8 @@ int SumDigitsOfNumber(int exploreNum)
     int sumNumber = 0;
     while (currentNum > 0)
     {
-        sumNumber = sumNumber + (currentNum % 10);
+        // sumNumber = sumNumber + (currentNum % 10);
+        sumNumber += currentNum % 10;
         currentNum = currentNum / 10;
     }
     return sumNumber;

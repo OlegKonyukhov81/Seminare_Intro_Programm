@@ -82,6 +82,8 @@ void PrintArray(int[] generated)
     // for (int position = 0; position < generated.Length; position ++)
     {
         Console.Write(generated[position]);
+        if (position >= 0 && position < count -1) Console.Write(", ");
+        else Console.Write("");
         position +=1;
     }
 }
