@@ -26,6 +26,7 @@ void PrintArray(int[] arr)
     }
     Console.Write("]");
 }
+// создаем новую переменную(массив)- результат работы метода CreateArrayRndInt(12, -9, 9)
 int[] array = CreateArrayRndInt(12, -9, 9);
 PrintArray(array);
 // создаем новую переменную(массив)- результат работы метода SumPositiveNegativeElem(array)
