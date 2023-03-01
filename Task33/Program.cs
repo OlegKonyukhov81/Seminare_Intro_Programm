@@ -49,7 +49,7 @@ void PrintRandomArray(int[] printArray)
 // }
 void NegativeFind(int[] explore, int searchableNum)
 {
-    int cloudNum = 1;
+    int currentNum = 1;
     for (int i = 0; i < explore.Length; i ++)
     {
         if (explore[i] == searchableNum)
@@ -59,9 +59,9 @@ void NegativeFind(int[] explore, int searchableNum)
         }
         else
         {
-            cloudNum = cloudNum + 1;
+            currentNum = currentNum + 1;
         }
-        if (cloudNum == explore.Length - 1)
+        if (currentNum == explore.Length - 1)
     {
         Console.Write(" -> Нет ");
     }
