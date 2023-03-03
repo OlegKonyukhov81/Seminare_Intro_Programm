@@ -26,7 +26,7 @@ void PrintRandomArray(int[] printArray)
 int EvenPositionSummNum(int[] inputArray)
 {
     int summNumbers = 0;
-    for (int i = 0; i < inputArray.Length; i +=2)
+    for (int i = 1; i < inputArray.Length; i +=2)
     {
         summNumbers = summNumbers + inputArray[i];
     }
