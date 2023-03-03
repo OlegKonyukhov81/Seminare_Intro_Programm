@@ -14,14 +14,14 @@ int NumberLength(int exploreNum)
     return count;
 }
 
-int[] ConvertInBinarySistem(int lengthArray, int exploreNum)
+int[] ConvertInBinarySystem(int lengthArray, int exploreNum)
 {
     int[] convertInBinary = new int[lengthArray];
-    int currentNum = exploreNum;
+    // int currentNum = exploreNum;
     for (int i = lengthArray - 1; i >= 0; i -=1)
     {
-        convertInBinary[i] = currentNum % 2;
-        currentNum = currentNum / 2;
+        convertInBinary[i] = exploreNum % 2;
+        exploreNum = exploreNum / 2;
     }
     return convertInBinary;
 }
@@ -39,6 +39,6 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int numberLength = NumberLength(number);
 // Console.Write($"{numberLength}");
-int[] binaryNumber = ConvertInBinarySistem(numberLength, number);
+int[] binaryNumber = ConvertInBinarySystem(numberLength, number);
 Console.Write($"{number} -> ");
 PrintRandomArray(binaryNumber);
