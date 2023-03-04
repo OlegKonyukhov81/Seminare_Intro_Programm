@@ -14,17 +14,17 @@ int num3 = Convert.ToInt32(Console.ReadLine());
 
 bool ValidateOfTriangle(int side1, int side2, int side3)
 {
-    if (side1 < side2 + side3)
+    // if (side1 < side2 + side3)
     {
-        if (side2 < side1 + side3)
-        {
-            if (side3 < side1 + side2)
-            {
-                return true;
-            }
-            else return false;
-        }
-        else return false;
+        // if (side2 < side1 + side3)
+        // {
+        //     if (side3 < side1 + side2)
+        //     {
+        //         return true;
+        //     }
+        //     else return false;
+        // }
+        // else return false;
     }
     else return false;
 }

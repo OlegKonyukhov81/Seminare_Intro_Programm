@@ -37,8 +37,24 @@ void PrintRandomArray(int[] printArray)
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int numberLength = NumberLength(number);
-// Console.Write($"{numberLength}");
-int[] binaryNumber = ConvertInBinarySystem(numberLength, number);
-Console.Write($"{number} -> ");
-PrintRandomArray(binaryNumber);
+// int numberLength = NumberLength(number);
+// // Console.Write($"{numberLength}");
+// int[] binaryNumber = ConvertInBinarySystem(numberLength, number);
+// Console.Write($"{number} -> ");
+// PrintRandomArray(binaryNumber);
+
+// или через строку
+
+// string ConvertInBinarySystem(int num)
+// {
+//     string numberBinary = string.Empty;
+//     while (num > 0)
+//     {
+//         numberBinary = num % 2 + numberBinary; // от перемены мест слагаемых, 
+//         num = num / 2;                         // меняется их расположение в рельтате(ответе).
+//     }
+//     return numberBinary;
+// }
+
+// string convertInBinary = ConvertInBinarySystem(number);
+// Console.Write(convertInBinary);
