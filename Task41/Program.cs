@@ -1,29 +1,22 @@
-﻿// Программа, которая преобразовывает десятичное число в двоичное.
-// 45 -> 101101
+﻿// Пользователь сначала вводит количество М чисел. Затем вводит сами числа,
+// нужно посчитать сколько чисел > 0 ввел пользователь.
+// -1, -2, -3, 4, 5, 6 -> 3
+
+Console.Write("Количество элементов в массиве: ");
+int number = Convert.ToInt32(Console.ReadLine());
 
 
-int NumberLength(int exploreNum)
+
+int[] RandomArray(int arrayLength)
 {
-    int count = 0;
-    int workNum = exploreNum;
-    while (workNum != 0)
+    int[] randomArray = new int[arrayLength];
+    for (int i = 0; i < arrayLength; i ++)
     {
-        workNum = workNum / 2;
-        count +=1;
+        Console.Write($"Введите число массива под идексом {i} : ");
+        int curretNum = Convert.ToInt32(Console.ReadLine());
+        randomArray[i] = curretNum;
     }
-    return count;
-}
-
-int[] ConvertInBinarySystem(int lengthArray, int exploreNum)
-{
-    int[] convertInBinary = new int[lengthArray];
-    // int currentNum = exploreNum;
-    for (int i = lengthArray - 1; i >= 0; i -=1)
-    {
-        convertInBinary[i] = exploreNum % 2;
-        exploreNum = exploreNum / 2;
-    }
-    return convertInBinary;
+    return randomArray;
 }
 
 void PrintRandomArray(int[] printArray)
@@ -31,30 +24,26 @@ void PrintRandomArray(int[] printArray)
     for (int i = 0; i < printArray.Length; i ++)
     {
         Console.Write($"{printArray[i]}");
+        if (i < printArray.Length -1)
+        Console.Write(", "); 
     }
 }
 
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
+int[] random = RandomArray(number);
+PrintRandomArray(random);
 
-// int numberLength = NumberLength(number);
-// // Console.Write($"{numberLength}");
-// int[] binaryNumber = ConvertInBinarySystem(numberLength, number);
-// Console.Write($"{number} -> ");
-// PrintRandomArray(binaryNumber);
+int CountPositiveNum(int[] inputArray)
+{
+    int count = 0;
+    for (int i = 0; i < inputArray.Length; i++)
+    {
+        if (inputArray[i] > 0) count +=1;
+    }
+    return count;
+}
 
-// или через строку
+int countPositiveNum = CountPositiveNum(random);
+// Console.WriteLine();
+Console.Write($" -> {countPositiveNum} чисел(а) > 0");
 
-// string ConvertInBinarySystem(int num)
-// {
-//     string numberBinary = string.Empty;
-//     while (num > 0)
-//     {
-//         numberBinary = num % 2 + numberBinary; // от перемены мест слагаемых, 
-//         num = num / 2;                         // меняется их расположение в рельтате(ответе).
-//     }
-//     return numberBinary;
-// }
 
-// string convertInBinary = ConvertInBinarySystem(number);
-// Console.Write(convertInBinary);
