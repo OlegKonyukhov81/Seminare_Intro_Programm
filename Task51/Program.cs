@@ -128,13 +128,19 @@ void PrintMainDiagonalNum(int[,] inputMatrix)
 int SumMainDiagonal(int[,] inputMatrix)
 {
     int sumNumbers = 0;
-    for (int i = 0; i < inputMatrix.GetLength(0); i++)
+    int count = inputMatrix.GetLength(0); // переменная для интервала счетчика
+    if (inputMatrix.GetLength(0) > inputMatrix.GetLength(1))
+    count = inputMatrix.GetLength(1);
+
+// Или в for добавляем ограничение для i и верхние 3 строчки не нужны!!!
+
+    for (int i = 0; i < inputMatrix.GetLength(0) && i < inputMatrix.GetLength(1); i++)
     {
-        for (int j = 0; j < inputMatrix.GetLength(1); j++)
-        {
-            if (i == j) 
-            sumNumbers += inputMatrix[i, j];
-        }
+        //for (int j = 0; j < inputMatrix.GetLength(1); j++)
+        //{
+            //if (i == j) 
+            sumNumbers += inputMatrix[i, i];
+        //}
     }
     return sumNumbers;
 }

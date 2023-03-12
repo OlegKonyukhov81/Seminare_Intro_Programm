@@ -8,7 +8,7 @@ double[] RandomArrayDouble(int num1, int num2, int num3)
     Random rndm = new Random();
     for (int i = 0; i < num1; i ++)
     {
-        randomArray[i] = rndm.NextDouble() * (num3 - num2) + num2;
+        randomArray[i] = rndm.NextDouble();
         randomArray[i] = Math.Round(randomArray[i], 1, MidpointRounding.ToZero);
     }
     return randomArray;
