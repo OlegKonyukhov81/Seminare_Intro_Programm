@@ -81,42 +81,46 @@ void PrintRandomArray(int[,] printArray)
 
 void PrintMainDiagonalNum(int[,] inputMatrix)
 {
-    if (inputMatrix.GetLength(0) < inputMatrix.GetLength(1))
-    {
+    if (inputMatrix.GetLength(0) < inputMatrix.GetLength(1)) 
+
+    { // Если (inputMatrix.GetLength(0) = inputMatrix.GetLength(1) метод считает по else!
+
         for (int i = 0; i < inputMatrix.GetLength(0); i++)
         {
-        for (int j = 0; j < inputMatrix.GetLength(0); j++)
-        {
-            if (i == j)
-            {
-            Console.Write(inputMatrix[i, j]);
+        //for (int j = 0; j < inputMatrix.GetLength(0); j++)
+        //{
+            //if (i == j)
+            //{
+                // для оптимизации и быстроты работы убираем доп. циклы!!!
+                // то же надо делать и для методов выше!!!
+            Console.Write(inputMatrix[i, i]);
             if (i != inputMatrix.GetLength(0) - 1)
             {
                 Console.Write(" + ");
             }
             else Console.Write("");
             }
-        }
-        }
+        //}
+        //}
         Console.Write(" = ");
     }
     else
     {
        for (int i = 0; i < inputMatrix.GetLength(1); i++)
         {
-        for (int j = 0; j < inputMatrix.GetLength(1); j++)
-        {
-            if (i == j)
-            {
-            Console.Write(inputMatrix[i, j]);
+        // for (int j = 0; j < inputMatrix.GetLength(1); j++)
+        // {
+           // if (i == j)
+           // {
+            Console.Write(inputMatrix[i, i]);
             if (i != inputMatrix.GetLength(1) - 1)
             {
                 Console.Write(" + ");
             }
             else Console.Write("");
             }
-        }
-        }
+        //}
+        //}
         Console.Write(" = ");
     }
 }
@@ -135,7 +139,7 @@ int SumMainDiagonal(int[,] inputMatrix)
     return sumNumbers;
 }
 
-int[,] randomMatrix = Matrix(10, 4);
+int[,] randomMatrix = Matrix(4, 4);
 PrintRandomArray(randomMatrix);
 Console.WriteLine();
 
