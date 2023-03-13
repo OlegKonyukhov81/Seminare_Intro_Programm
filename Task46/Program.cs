@@ -1,6 +1,6 @@
 ﻿// Задайте двумерный массив m x n, заполненный случайными целыми числами. m=3, n=4.
 
-int[,] RandomArray(int rows, int colomns, int min, int max)
+int[,] RandomMatrix(int rows, int colomns, int min, int max)
 {
     int[,] matrix = new int[rows, colomns];
     Random rndm = new Random();
@@ -12,7 +12,7 @@ int[,] RandomArray(int rows, int colomns, int min, int max)
     return matrix;
 }
 
-void PrintRandomArray(int[,] printArray)
+void PrintRandomMatrix(int[,] printArray)
 {
     for (int i = 0; i < printArray.GetLength(0); i ++)
     {
@@ -24,5 +24,5 @@ void PrintRandomArray(int[,] printArray)
     }
 }
 
-int[,] matrixArray = RandomArray(3, 4, -50, 50);
-PrintRandomArray(matrixArray);
+int[,] matrixArray = RandomMatrix(3, 4, -50, 50);
+PrintRandomMatrix(matrixArray);
