@@ -1,6 +1,6 @@
 ﻿// Задать двумерный массив целых чисел,
-// найти среднееарифметическое каждого столбца.
-// - среднееарифметическое каждого столбца: 4,4; 5,6; 3,6; 3.
+// найти среднее арифметическое каждого столбца.
+// - среднее арифметическое каждого столбца: 4,4; 5,6; 3,6; 3.
 
 int[,] Matrix(int rows, int colomns)
 {
@@ -14,14 +14,14 @@ int[,] Matrix(int rows, int colomns)
     return matrix;
 }
 
-void PrintRandomMatrix(int[,] printArray)
+void PrintRandomMatrix(int[,] printMatrix)
 {
-    for (int i = 0; i < printArray.GetLength(0); i ++)
+    for (int i = 0; i < printMatrix.GetLength(0); i ++)
     {
         Console.WriteLine();
-        for (int j = 0; j < printArray.GetLength(1); j++)
+        for (int j = 0; j < printMatrix.GetLength(1); j++)
         {
-            Console.Write($"{printArray[i, j], 4}");
+            Console.Write($"{printMatrix[i, j], 4}");
         }
     }
 }
@@ -32,14 +32,33 @@ PrintRandomMatrix(randomMatrix);
 double[] ArithmeticMeanColomns(int[,] matrix)
 {
     double[] arithmeticMeanArray = new double[matrix.GetLength(1)];
-    double arithmeticMean = 0;
-    for (int j = 0; j < matrix.GetLength(1); j++)
+
+    for (int j = 0; j < matrix.GetLength(1); j ++)
     {
+        double arithmeticMean = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            arithmeticMean = arithmeticMean + matrix[i, j];
+            arithmeticMean += matrix[i, j];
         }
         arithmeticMean = arithmeticMean / matrix.GetLength(0);
-        
+        arithmeticMean = Math.Round(arithmeticMean, 1, MidpointRounding.ToZero);
+        arithmeticMeanArray[j] = arithmeticMean;
+    }
+    return arithmeticMeanArray;
+}
+
+void PrintArithmeticMeanArray(double[] printArray)
+{
+    for (int i = 0; i < printArray.Length; i ++)
+    {
+        Console.Write($"{printArray[i], 5}");
+        if (i != printArray.Length - 1)
+        Console.Write("; ");
+        else Console.Write(".");
     }
 }
+
+Console.WriteLine();
+Console.Write("Среднее арифтетическое каждого столбца: ");
+double[] arithmeticMeanArray = ArithmeticMeanColomns(randomMatrix);
+PrintArithmeticMeanArray(arithmeticMeanArray);
