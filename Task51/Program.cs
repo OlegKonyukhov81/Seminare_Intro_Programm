@@ -6,7 +6,7 @@
 //   9 15  8 33 31  7 30 11  8 31
 // Сумма элементов главной диагонали.40 + 1 + 28 + 33 = 102
 
-int[,] Matrix(int rows, int colomns)
+int[,] RandomMatrix(int rows, int colomns)
 {
     int[,] matrix = new int[rows, colomns];
     Random rndm = new Random();
@@ -18,7 +18,7 @@ int[,] Matrix(int rows, int colomns)
     return matrix;
 }
 
-void PrintRandomArray(int[,] printArray)
+void PrintRandomMatrix(int[,] printArray)
 {
     for (int i = 0; i < printArray.GetLength(0); i ++)
     {
@@ -145,8 +145,8 @@ int SumMainDiagonal(int[,] inputMatrix)
     return sumNumbers;
 }
 
-int[,] randomMatrix = Matrix(4, 4);
-PrintRandomArray(randomMatrix);
+int[,] randomMatrix = RandomMatrix(4, 4);
+PrintRandomMatrix(randomMatrix);
 Console.WriteLine();
 
 Console.Write("Сумма элементов главной диагонали.");
