@@ -11,7 +11,7 @@ int[,] SpiralFillMatrix(int rows, int colomns, int min)
     int currentNum = min;
     int countI = 0;
     int countJ = 0;
-    while (currentNum <= 16)
+    while (currentNum <= rows * colomns)
     {
     for (int i = 0 + countI; i <= 0 + countI; i++)
     {
