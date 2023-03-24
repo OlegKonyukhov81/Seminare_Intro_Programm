@@ -78,7 +78,7 @@ void Counting(int[] exploreArray)
         if (exploreArray[i] == currentNum)  count ++;
         else
         {
-            Console.WriteLine($"{currentNum} -> {count} раз.");
+            Console.WriteLine($"{currentNum} -> {count} раз.вышел из else");
             currentNum = exploreArray[i];
             count = 1;
         } 
