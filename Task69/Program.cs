@@ -13,4 +13,4 @@ int Power(int number, int degree)
     if (degree == 0) return 1;
     else return number * Power(number, degree - 1);
 }
-Console.WriteLine(Power(num1, num2));
+Console.WriteLine($"{num1},{num2} -> {Power(num1, num2)}");
